@@ -48,3 +48,6 @@ def encryption(request):
             return response  
     return render(request, 'encryption.html')
 
+
+def landing(request):
+    return render(request, 'landing.html')

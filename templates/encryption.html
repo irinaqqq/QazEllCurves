@@ -13,14 +13,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #002750;
+            background: linear-gradient(180deg, #4670d1 100%, transparent 50%);
         }
         
         /* Set the width of the main content section */
         .content {
             margin-left: 10%;
             width: 90%;
-            height: 100vh;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -30,7 +29,7 @@
         /* Set the width and height of the textareas */
         textarea {
             width: 30%;
-            height: 80vh;
+            height: 70vh;
             font-size: 1.2rem;
             padding: 1rem;
         }
@@ -42,7 +41,7 @@
             font-size: 1.2rem;
             font-weight: bold;
             color: #fff;
-            background-color: #002750;
+            background-color: #4670d1;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -58,6 +57,8 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 2rem;
+            margin-left: 10%;
+            margin-top: 30%;
         }
         
         body {
@@ -77,9 +78,12 @@
             cursor: pointer;
             border: 1px solid #ccc;
             border-radius: 4px;
-            background-color: #f8f8f8;
+            background-color: #4670d1;
             padding: 10px;
-            {% comment %} margin-left: 5%; {% endcomment %}
+            color: white;
+        }
+        .custom-file-upload:hover {
+            background-color: #0069d9;
         }
         
         .custom-file-upload input[type="file"] {
@@ -100,13 +104,14 @@
             right: 0px;
             top: 60px;
         }
-        h1 {
+        a {
             font-size: 30px;
             writing-mode: vertical-rl;
             text-orientation: mixed;
             white-space: nowrap;
             margin: 0;
             color: white;
+            text-decoration: none;
         }
         
 
@@ -124,16 +129,10 @@
         <button type="submit" name="submit_text" onclick="document.getElementById('encryption_type').value='decrypt_text'">Мәтінді дешифрлау</button>
         </div>
         <textarea id="ciptext" name="ciptext" rows="7">{{ ciphertext }}</textarea>
-        {% comment %} <script>
-          const ciptextEl = document.getElementById('ciptext');
-          const ciphertext = ciptextEl.value;
-          const plaintext = ciphertext.slice(1, -1);
-          ciptextEl.value = plaintext;
-        </script> {% endcomment %}
         <div class="button-container">
         <label for="file" class="custom-file-upload">Файлды таңдаңыз
         <input type="file" id="file" name="file" value="Select a file">
-        <button type="reset">Clear</button> </label>
+        <button type="reset"  style="display: none;">Тазалау</button> </label>
         <button type="submit" name="submit_file" onclick="document.getElementById('encryption_type').value='file'">Файлды шифрлау</button>
         <button type="submit" name="submit_file" onclick="document.getElementById('encryption_type').value='decrypt_file'">Файлды дешифрлау</button>
         <div>
@@ -141,7 +140,7 @@
     </div>
 
     <div class="links">
-        <h1 style="transform: rotate(180deg);">Эллиптикалық қисықтар арқылы шифрлау</h1>
+        <a style="transform: rotate(180deg);" href="/">Эллиптикалық қисықтар арқылы шифрлау</a>
     </div>
 </body>
 </html>

@@ -19,5 +19,6 @@ from maincurves import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.encryption, name='encryption'),
+    path('', views.landing, name='landing'),
+    path('main/', views.encryption, name='encryption'),
 ]

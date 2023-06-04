@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encryption Page</title>
+    <style>
+        .links {
+            width: 10%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #002750;
+        }
+        
+        /* Set the width of the main content section */
+        .content {
+            margin-left: 10%;
+            width: 90%;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Set the width and height of the textareas */
+        textarea {
+            width: 30%;
+            height: 80vh;
+            font-size: 1.2rem;
+            padding: 1rem;
+        }
+        
+        /* Center the buttons */
+        button {
+            margin: 10px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #002750;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #0069d9;
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .custom-file-upload {
+            display: inline-block;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+        
+        .custom-file-upload input[type="file"] {
+            display: none;
+        }
+        
+        #text {
+            margin-right: 1rem;
+            position: absolute;
+            left: 210px;
+            top: 60px;
+        }
+        
+        #ciptext {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            position: absolute;
+            right: 0px;
+            top: 60px;
+        }
+        h1 {
+            font-size: 30px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            white-space: nowrap;
+            margin: 0;
+            color: white;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="content">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <textarea id="text" name="text" rows="7">{{origtext}}</textarea>
+    
+        <input type="hidden" id="encryption_type" name="encryption_type" value="">
+        <div class="button-container">
+        <button type="submit" name="submit_text" onclick="document.getElementById('encryption_type').value='text'">Мәтінді шифрлау</button>
+        <button type="submit" name="submit_text" onclick="document.getElementById('encryption_type').value='decrypt_text'">Мәтінді дешифрлау</button>
+        </div>
+        <textarea id="ciptext" name="ciptext" rows="7">{{ ciphertext }}</textarea>
+        {% comment %} <script>
+          const ciptextEl = document.getElementById('ciptext');
+          const ciphertext = ciptextEl.value;
+          const plaintext = ciphertext.slice(1, -1);
+          ciptextEl.value = plaintext;
+        </script> {% endcomment %}
+        <div class="button-container">
+        <label for="file" class="custom-file-upload">Файлды таңдаңыз
+        <input type="file" id="file" name="file" value="Select a file">
+        <button type="reset">Clear</button> </label>
+        <button type="submit" name="submit_file" onclick="document.getElementById('encryption_type').value='file'">Файлды шифрлау</button>
+        <button type="submit" name="submit_file" onclick="document.getElementById('encryption_type').value='decrypt_file'">Файлды дешифрлау</button>
+        <div>
+    </form>
+    </div>
+
+    <div class="links">
+        <h1 style="transform: rotate(180deg);">Эллиптикалық қисықтар арқылы шифрлау</h1>
+    </div>
+</body>
+</html>

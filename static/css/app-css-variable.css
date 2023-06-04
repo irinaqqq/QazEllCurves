@@ -1,0 +1,131 @@
+:root {
+
+    /* fonts */
+    --pFont: 'Fira Sans', sans-serif;
+    --sFont: 'Montserrat', sans-serif;
+    --rokkittFont: 'Rokkitt', serif;
+    --dosisFont: 'Dosis', sans-serif;
+
+    /* Margin */
+    --mb-6: initial;
+
+    /* shadows */
+    --pShadow: 0 14px 26px -12px hsla(0,0%,60%,.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px hsla(0,0%,60%,.2);
+
+    /* Main Color */
+    --pColor: hsl(220, 100%, 60%);
+    --ptColor: rgba(225,225,225, 0.2);
+    --phColor: #6c47ff;
+    --sColor: #aaa;
+    --rColor: #fff;
+    --whiteCol: #fff;
+    --grayColor: #999;
+    --grayColor-2: #3d4853;
+    --silverColor: #6c738a; /*--silverColor: #666;*/
+    --darkSuccessCol: #008169;
+
+    /* Different Color */
+    --defaultCol: hsl(210, 16%, 70%);
+    --scondaryCol: hsl(195, 20%, 60%);
+    --primaryCol: hsl(220, 100%, 60%);
+    --infoCol: hsl(187, 100%, 45%);
+    --successCol: #3bce95; /*--successCol: hsl(162, 99%, 38%);*/
+    --warningCol: hsl(30, 100%, 60%);
+    --dangerCol: hsl(1, 100%, 62%);
+    --pinkCol: hsl(-21, 100%, 60%);
+
+    /* Different Hover & Active Color */
+    --defaultActiveCol: hsl(210, 16%, 50%);
+    --secondaryActiveCol: hsl(195, 20%, 48%);
+    --whiteActiveCol: hsl(0, 0%, 90%);
+    --primaryActiveCol: hsl(220, 92%, 50%);
+    --infoActiveCol: hsl(187, 92%, 42%);
+    --successActiveCol: hsl(162, 92%, 35%);
+    --warningActiveCol: hsl(30, 92%, 50%);
+    --dangerActiveCol: hsl(1, 92%, 50%);
+    --pinkActiveCol: hsl(-21, 92%, 50%);
+
+    --unite-5: 5px;
+    --unite-15: 15px;
+    --unite-25: 25px;
+    --unite-35: 35px;
+    --unite-45: 45px;
+    --unite-55: 55px;
+    --unite-65: 65px;
+    --unite-75: 75px;
+    --unite-85: 85px;
+    --unite-95: 95px;
+
+    --unite-10: 10px;
+    --unite-20: 20px;
+    --unite-30: 30px;
+    --unite-40: 40px;
+    --unite-50: 50px;
+    --unite-60: 60px;
+    --unite-70: 70px;
+    --unite-80: 80px;
+    --unite-90: 90px;
+    --unite-100: 100px;
+}
+
+/*================== Elements ====================*/
+
+/* Background Color */
+.default-bg {background-color: var(--defaultCol) !important; }
+.white-bg {background-color: var(--whiteCol) !important;}
+.primary-bg {background-color: var(--primaryCol) !important; }
+.secondary-bg {background-color: var(--scondaryCol) !important; }
+.info-bg {background-color: var(--infoCol) !important; }
+.success-bg {background-color: var(--successCol) !important; }
+.warning-bg {background-color: var(--warningCol) !important; }
+.danger-bg {background-color: var(--dangerCol) !important; }
+.pink-bg {background-color: var(--pink )!important; }
+
+/* Color */
+.default-color {color: var(--defaultCol) !important; }
+.white-color {color: var(--whiteCol) !important; }
+.primary-color {color: var(--primaryCol) !important; }
+.secondary-color {color: var(--scondaryCol) !important; }
+.info-color {color: var(--infoCol) !important; }
+.success-color {color: var(--successCol) !important; }
+.warning-color {color: var(--warningCol) !important; }
+.danger-color {color: var(--dangerCol) !important; }
+.pink-color {color: var(--pink) !important; }
+
+/* color Transparent */
+.success-bg-trans {color: var(--successBgTrans) !important; }
+
+
+/*================== Navigation ====================*/
+.navbar {
+    --navColor: #f4f4f4;
+}
+.navbar .dropdown-menu {
+    --nav-shadow-h: 0;
+    --nav-shadow-v: 2;
+    --nav-shadow-blur: 5;
+    --nav-shadow-color: rgba(0,0,0,.25);
+}
+
+/* Tabs */
+.tabs {
+    --tabColor: red;
+    --tabHoverColor: #e4e7e8;
+    font-size: initial;
+}
+
+/*================== Cards ====================*/
+.card {
+    --mb-6: 60px;
+    --cardCol: #47546B;
+    --successBg: #BFF5BF;
+}
+.transparent-color {
+    background-color: var(--ptColor);
+}
+.white-color {
+    color: var(--whiteCol) !important;
+}
+.mb-6 {
+    margin-bottom: var(--mb-6, 60px);
+}
